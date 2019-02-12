@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using Alzheimer.Localization.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Alzheimer.Controllers
@@ -7,11 +7,16 @@ namespace Alzheimer.Controllers
     [ApiController]
     public class LocalizationController : ControllerBase
     {
-        // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var geolocalization = new GeoLocalization
+            {
+                Latitude = -23.601250,
+                Longitude = -46.694920
+            };
+
+            return Ok(geolocalization);
         }
     }
 }
