@@ -7,6 +7,10 @@ namespace Alzheimer.Controllers
     [ApiController]
     public class LocalizationController : ControllerBase
     {
+        /// <summary>
+        /// Display the geolocalization
+        /// </summary>
+        /// <returns>The latitude and longitude</returns>
         [HttpGet]
         public IActionResult Get()
         {
